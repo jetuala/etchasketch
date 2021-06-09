@@ -1,0 +1,25 @@
+body {
+    background-color: blue;
+}
+
+.container {
+    width: 720px;
+    height: 720px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block {
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    transition: background-color 0.02s;
+}
+
+/* .block:hover {
+    background-color: blue;
+} */
+
+.drawn {
+    background-color: black;
+}
