@@ -14,3 +14,9 @@ for (let j = 0; j < 16; j++) {
         mainSketchContainer.append(div);
     }
 }
+
+let clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", function() {
+    let divs = document.querySelectorAll(".block");
+    divs.forEach((div) => div.classList.remove("drawn"));
+})
