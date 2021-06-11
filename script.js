@@ -9,7 +9,19 @@ let numberOfBlocks = 64; // number of blocks per side! :)
 clearBtn.addEventListener("click", function() {
     let divs = document.querySelectorAll(".block");
     divs.forEach((div) => div.classList.remove("drawn"));
+    promptSides();
 })
+
+function promptSides() {
+    numberOfBlocks = prompt("How many blocks per side do you want?");
+    removeBoard();
+    createBoard();
+}
+
+function removeBoard() {
+    let allDivs = document.querySelectorAll(".row");
+    allDivs.forEach((div) => div.remove() )
+}
 
 function createBoard() {
     for (let j = 0; j < numberOfBlocks; j++) {
