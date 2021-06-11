@@ -6,19 +6,19 @@ body {
     width: 720px;
     height: 720px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
+
+.row {
+    flex: 1 1 auto;
+    display: flex;
+} 
 
 .block {
+    flex: 1 1 auto;
     background-color: white;
-    width: 45px;
-    height: 45px;
     transition: background-color 0.5s;
 }
-
-/* .block:hover {
-    background-color: blue;
-} */
 
 .drawn {
     background-color: black;

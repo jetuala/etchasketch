@@ -1,22 +1,32 @@
-// make row of 16 divs
+// variable declarations
 
 let mainSketchContainer = document.getElementById("mainSketchContainer");
-
-for (let j = 0; j < 16; j++) {
-    for (let i = 0; i < 16; i++) {
-        let div = document.createElement('div');
-        div.id = "row" + j + "col" + i;
-        div.className = "block";
-        div.addEventListener("mouseover", function() {
-            div.classList.add("drawn");
-        })
-
-        mainSketchContainer.append(div);
-    }
-}
-
 let clearBtn = document.getElementById("clearBtn");
+let numberOfBlocks = 64; // number of blocks per side! :)
+
+// event handlers
+
 clearBtn.addEventListener("click", function() {
     let divs = document.querySelectorAll(".block");
     divs.forEach((div) => div.classList.remove("drawn"));
 })
+
+function createBoard() {
+    for (let j = 0; j < numberOfBlocks; j++) {
+        let rowDiv = document.createElement('div');
+        rowDiv.className = "row";
+        for (let i = 0; i < numberOfBlocks; i++) {
+            let colDiv = document.createElement('div');
+            colDiv.id = "row" + j + "col" + i;
+            colDiv.className = "block";
+            colDiv.addEventListener("mouseover", function() {
+                colDiv.classList.add("drawn");
+            })
+
+            rowDiv.append(colDiv);
+        }
+        mainSketchContainer.append(rowDiv);
+    }
+}
+
+createBoard();
