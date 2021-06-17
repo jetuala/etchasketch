@@ -1,5 +1,16 @@
 body {
-    background-color: blue;
+    background-color: black;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#clearBtn {
+    margin: 10px;
 }
 
 .container {
@@ -18,8 +29,4 @@ body {
     flex: 1 1 auto;
     background-color: white;
     transition: background-color 0.5s;
-}
-
-.drawn {
-    background-color: black;
 }

@@ -12,6 +12,11 @@ clearBtn.addEventListener("click", function() {
     promptSides();
 })
 
+function getRandomColor() {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+}
+
 function promptSides() {
     numberOfBlocks = prompt("How many blocks per side do you want?");
     removeBoard();
@@ -32,6 +37,7 @@ function createBoard() {
             colDiv.id = "row" + j + "col" + i;
             colDiv.className = "block";
             colDiv.addEventListener("mouseover", function() {
+                colDiv.style.backgroundColor = "#" + getRandomColor(); 
                 colDiv.classList.add("drawn");
             })
 
